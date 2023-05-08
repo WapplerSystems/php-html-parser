@@ -105,6 +105,10 @@ class Parser implements ParserInterface
     {
         // set the default
         $encode = new Encoder();
+        $encoderOptions = new \StringEncoder\Options();
+        $encoderOptions->setDefaultTargetEncoding($defaultCharset);
+        $encoderOptions->setCaseSensitiveEncoding(false);
+        $encode->setOptions($encoderOptions);
         $encode->setSourceEncoding($defaultCharset);
         $encode->setTargetEncoding($defaultCharset);
 
